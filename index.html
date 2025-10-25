@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>François-Jean Henry - FJH Conseil</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            padding: 20px 0;
+            background: #ffffff;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        
+        .logo-img {
+            height: 60px;
+            width: auto;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #e97132 0%, #f18a50 100%);
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        .hero-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+        
+        /* CTA Buttons */
+        .cta-primary {
+            display: inline-block;
+            padding: 14px 35px;
+            background: #ffffff;
+            color: #e97132;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s;
+            margin: 10px;
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .cta-secondary {
+            display: inline-block;
+            padding: 14px 35px;
+            background: transparent;
+            color: #ffffff;
+            text-decoration: none;
+            border: 2px solid #ffffff;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s;
+            margin: 10px;
+        }
+        
+        .cta-secondary:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+        
+        /* Philosophie Section */
+        .philosophie-section {
+            padding: 80px 0;
+            background: #ffffff;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        
+        .philosophie-text {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #5a6c7d;
+        }
+        
+        .highlight-quote {
+            font-size: 24px;
+            font-weight: 700;
+            color: #e97132;
+            margin: 30px 0;
+            font-style: italic;
+        }
+        
+        /* Mode d'emploi */
+        .mode-emploi-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+        
+        .mode-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid #e97132;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .mode-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(233,113,50,0.2);
+        }
+        
+        .mode-card h3 {
+            font-size: 20px;
+            color: #e97132;
+            margin-bottom: 15px;
+        }
+        
+        .mode-card .force {
+            margin-bottom: 15px;
+        }
+        
+        .mode-card .force strong {
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        
+        .mode-card .vigilance {
+            margin-bottom: 15px;
+            font-size: 15px;
+            color: #2c3e50;
+        }
+        
+        .mode-card .vigilance strong {
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        
+        .mode-card .utilite {
+            font-size: 15px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+        
+        .service-block {
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+            border-top: 6px solid #e97132;
+        }
+        
+        .service-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .service-icon {
+            font-size: 48px;
+        }
+        
+        .service-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .service-accroche {
+            font-size: 18px;
+            color: #e97132;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        
+        .service-content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #5a6c7d;
+            margin-bottom: 20px;
+        }
+        
+        .service-list {
+            margin: 20px 0;
+        }
+        
+        .service-list li {
+            margin-bottom: 12px;
+            padding-left: 10px;
+        }
+        
+        .formation-category {
+            margin-bottom: 20px;
+        }
+        
+        .formation-category strong {
+            color: #e97132;
+            font-size: 17px;
+        }
+        
+        .mediation-points {
+            background: #fff7f4;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .mediation-points h4 {
+            color: #e97132;
+            margin-bottom: 15px;
+        }
+        
+        .process-timeline {
+            margin: 30px 0;
+        }
+        
+        .process-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #e97132;
+        }
+        
+        .process-number {
+            min-width: 35px;
+            height: 35px;
+            background: #e97132;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 15px;
+        }
+        
+        .service-cta {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            color: #e97132;
+            text-decoration: none;
+            border: 2px solid #e97132;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s;
+            margin-top: 20px;
+        }
+        
+        .service-cta:hover {
+            background: #e97132;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(233,113,50,0.3);
+        }
+        
+        .service-cta-wrapper {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        /* Partenaires */
+        .partenaires-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+            text-align: center;
+        }
+        
+        .partenaires-text {
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 16px;
+            color: #5a6c7d;
+        }
+        
+        /* CTA Final */
+        .cta-final-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #e97132 0%, #f18a50 100%);
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        .cta-final-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-final-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 50px 0;
+            background: #2c3e50;
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        .footer-baseline {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .contact-box {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #e97132;
+            max-width: 500px;
+            margin: 0 auto 30px;
+        }
+        
+        .contact-box h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-item a {
+            color: #ffffff;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+        
+        .contact-item a:hover {
+            opacity: 1;
+        }
+        
+        /* Services Navigation */
+        .services-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+        
+        .service-nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: #ffffff;
+            color: #e97132;
+            text-decoration: none;
+            border: 2px solid #e97132;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+        
+        .service-nav-btn:hover {
+            background: #e97132;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(233,113,50,0.3);
+        }
+        
+        /* Partenaires List */
+        .partenaires-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .partenaires-list span {
+            font-size: 18px;
+            color: #e97132;
+            font-weight: 600;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero .subtitle {
+                font-size: 16px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .service-block {
+                padding: 30px 20px;
+            }
+            
+            .service-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <img src="logo-fjh.png" alt="FJH Conseil" class="logo-img">
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <img src="placeholder-photo.jpg" alt="François-Jean Henry" class="hero-photo">
+            <h1>François Henry<br>Coach, Formateur & Médiateur</h1>
+            <p class="subtitle">Fort d'un parcours varié et de 15 ans dans un grand groupe, j'accompagne les entreprises, leurs dirigeants et les particuliers avec une conviction : se regarder en vérité pour rester aligné avec soi et avec les autres.</p>
+            <div>
+                <a href="mailto:fhenry.tpdi@gmail.com?subject=Demande d'échange découverte" class="cta-primary">Réserver un échange</a>
+                <a href="#services" class="cta-secondary">En savoir plus</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophie -->
+    <section class="philosophie-section">
+        <div class="container">
+            <h2 class="section-title">Se regarder en vérité</h2>
+            <div class="philosophie-text">
+                <p>"Se regarder en vérité" est une phrase qui résonne en moi. Je vous propose d'avancer ensemble sur cette thématique.</p>
+                <p class="highlight-quote">"Nous avons inventé le mensonge, car sa propre vérité est souvent complexe à appréhender ou à affronter."</p>
+                <p>Il s'agit souvent d'un processus d'auto-défense. Cependant c'est un passage obligatoire pour rester aligné avec soi et avec les autres. De nombreuses recherches me rendent très humble sur le sujet mais me confortent sur l'intérêt de ce cheminement : affronter sa vérité pour être aligné.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mode d'emploi -->
+    <section class="mode-emploi-section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Mon mode d'emploi</h2>
+            <p style="text-align: center; font-size: 18px; color: #5a6c7d; margin-bottom: 20px;">Je vous partage mes vérités. Cheminons ensemble sur les vôtres.</p>
+            
+            <div class="cards-grid">
+                <div class="mode-card">
+                    <h3>Comprendre rapidement</h3>
+                    <div class="force">
+                        <strong>⭐ Ma force :</strong> Comprendre les enjeux et problématiques rapidement
+                    </div>
+                    <div class="vigilance">
+                        <strong>⚠️ Vigilance :</strong> Aller trop vite. "Je ne comprends pas" = risque que vous alliez vous-même trop vite
+                    </div>
+                    <div class="utilite">
+                        ✅ En confiance, prenons le temps. Si je ne comprends pas, il y a certainement un sujet important à explorer et expliciter
+                    </div>
+                </div>
+
+                <div class="mode-card">
+                    <h3>Traiter à la racine</h3>
+                    <div class="force">
+                        <strong>⭐ Ma force :</strong> Traiter les problèmes à la racine
+                    </div>
+                    <div class="vigilance">
+                        <strong>⚠️ Vigilance :</strong> Être provocateur (rugueux), générer un climat de tension
+                    </div>
+                    <div class="utilite">
+                        ✅ Bienveillant avec la personne et dur avec le problème. Permettre d'aller en profondeur sans s'arrêter aux couches superficielles
+                    </div>
+                </div>
+
+                <div class="mode-card">
+                    <h3>Vision globale</h3>
+                    <div class="force">
+                        <strong>⭐ Ma force :</strong> Avoir une vision globale
+                    </div>
+                    <div class="vigilance">
+                        <strong>⚠️ Vigilance :</strong> Négliger les détails. "C'est suffisamment bien"
+                    </div>
+                    <div class="utilite">
+                        ✅ Trouver du sens et une voie motivante avant de s'arrêter sur les détails. Si un détail est important pour vous, alors ce n'est plus un détail
+                    </div>
+                </div>
+
+                <div class="mode-card">
+                    <h3>Cadre sécurisant</h3>
+                    <div class="force">
+                        <strong>⭐ Ma force :</strong> Créer un cadre sécurisant
+                    </div>
+                    <div class="vigilance">
+                        <strong>⚠️ Vigilance :</strong> Jouer avec les limites, se mettre "hors-jeu"
+                    </div>
+                    <div class="utilite">
+                        ✅ Ajustons notre cadre, notre terrain de jeu en partageant les règles, les objectifs et les intentions
+                    </div>
+                </div>
+
+                <div class="mode-card">
+                    <h3>Force de proposition</h3>
+                    <div class="force">
+                        <strong>⭐ Ma force :</strong> Générateur d'idées
+                    </div>
+                    <div class="vigilance">
+                        <strong>⚠️ Vigilance :</strong> Se disperser. "Ça me fait penser à..."
+                    </div>
+                    <div class="utilite">
+                        ✅ Ne pas hésiter à éliminer les idées qui ne font pas sens pour vous, mais restez à l'écoute de celle qui fera la différence
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Mes accompagnements</h2>
+            
+            <!-- Navigation Services -->
+            <div class="services-nav">
+                <a href="#coaching" class="service-nav-btn">
+                    <span style="font-size: 24px;">🎯</span>
+                    <span>Coaching</span>
+                </a>
+                <a href="#formation" class="service-nav-btn">
+                    <span style="font-size: 24px;">📚</span>
+                    <span>Formation</span>
+                </a>
+                <a href="#mediation" class="service-nav-btn">
+                    <span style="font-size: 24px;">⚖️</span>
+                    <span>Médiation</span>
+                </a>
+            </div>
+            
+            <!-- Coaching -->
+            <div class="service-block" id="coaching">
+                <div class="service-header">
+                    <div class="service-icon">🎯</div>
+                    <h3 class="service-title">Le Coaching</h3>
+                </div>
+                <p class="service-accroche">Sparring-partner pour entreprises, dirigeants et particuliers</p>
+                <div class="service-content">
+                    <p>Fort d'un parcours varié, apprenant et formateur, j'accompagne les entreprises et leurs dirigeants en partageant :</p>
+                    <ul class="service-list">
+                        <li>La méthodologie apprise dans un grand groupe durant 15 ans</li>
+                        <li>Le support et la posture de sparring-partner développés avec des experts</li>
+                        <li>L'aventure entrepreneuriale de mes 8 dernières années</li>
+                    </ul>
+                    <p>De nombreux particuliers me font aussi confiance pour les aider à éclaircir leurs doutes et questionnements.</p>
+                </div>
+                <div class="service-cta-wrapper">
+                    <a href="mailto:fhenry.tpdi@gmail.com?subject=Demande d'accompagnement coaching" class="service-cta">Échanger sur le coaching</a>
+                </div>
+            </div>
+
+            <!-- Formation -->
+            <div class="service-block" id="formation">
+                <div class="service-header">
+                    <div class="service-icon">📚</div>
+                    <h3 class="service-title">La Formation</h3>
+                </div>
+                <p class="service-accroche">Formations sur-mesure, robustes et engageantes</p>
+                <div class="service-content">
+                    <p>En direct ou adossé à des structures avec plusieurs formateurs expérimentés pour de grandes équipes ou des déploiements rapides, je peux vous accompagner sur différentes thématiques :</p>
+                    
+                    <div class="formation-category">
+                        <strong>Commerce :</strong>
+                        <ul style="margin-top: 10px;">
+                            <li>Définir et structurer sa stratégie commerciale</li>
+                            <li>Développer et renforcer l'efficacité commerciale en travaillant sur la posture et la technique</li>
+                            <li>Développement commercial et IA</li>
+                        </ul>
+                    </div>
+
+                    <div class="formation-category">
+                        <strong>Management :</strong>
+                        <ul style="margin-top: 10px;">
+                            <li>Comprendre et utiliser les différents types de management pour mieux définir et assumer le sien</li>
+                        </ul>
+                    </div>
+
+                    <div class="formation-category">
+                        <strong>Émergence du collectif :</strong>
+                        <ul style="margin-top: 10px;">
+                            <li>Diagnostic Partagé</li>
+                            <li>Value Games (serious game)</li>
+                        </ul>
+                    </div>
+
+                    <div class="formation-category">
+                        <strong>Optimiser la relation :</strong>
+                        <ul style="margin-top: 10px;">
+                            <li>Mieux se comprendre pour mieux comprendre l'autre</li>
+                            <li>Développer la responsabilisation et l'engagement des équipes</li>
+                            <li>Anticiper & limiter les conflits</li>
+                        </ul>
+                    </div>
+
+                    <div class="formation-category">
+                        <strong>Gestion de conflits :</strong>
+                        <ul style="margin-top: 10px;">
+                            <li>Savoir reconnaître / appréhender / gérer le conflit</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #fff7f4; padding: 20px; border-radius: 10px; margin-top: 25px;">
+                        <p><strong>Notre approche :</strong> L'ensemble des formations ont une structure et un déroulé pédagogique robustes mais qui laissent la place à la réflexion et l'engagement des participants. En complément, en amont de la formation, j'accorde beaucoup d'importance à écouter les besoins et les spécificités des clients afin de rendre chaque formation unique et ajustée. En aval, un accompagnement dans la durée est possible afin d'ancrer les notions.</p>
+                    </div>
+                </div>
+                <div class="service-cta-wrapper">
+                    <a href="mailto:fhenry.tpdi@gmail.com?subject=Demande d'information - Formations" class="service-cta">Découvrir les formations</a>
+                </div>
+            </div>
+
+            <!-- Médiation -->
+            <div class="service-block" id="mediation">
+                <div class="service-header">
+                    <div class="service-icon">⚖️</div>
+                    <h3 class="service-title">La Médiation</h3>
+                </div>
+                <p class="service-accroche">Le conflit est utile. Traitons-le dans un cadre adapté.</p>
+                <div class="service-content">
+                    <div class="mediation-points">
+                        <h4>Pourquoi le conflit est utile ?</h4>
+                        <ul>
+                            <li>Faire émerger une problématique</li>
+                            <li>S'affirmer / se faire entendre</li>
+                            <li>Changer une situation insatisfaisante</li>
+                            <li>Mieux se connaître et s'accepter</li>
+                            <li>Mieux définir sa bulle de sécurité (ses propres valeurs / son identité)</li>
+                            <li>Comprendre les bonnes raisons des autres et leur laisser l'espace nécessaire pour grandir "aussi" (gagnant/gagnant vs gagnant/perdant)</li>
+                        </ul>
+                    </div>
+
+                    <p>Cependant la difficulté est de le traiter dans un cadre qui permet de faire émerger son utilité. Pour cela, le support d'un tiers externe est souvent un atout.</p>
+
+                    <div style="background: #fff7f4; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                        <h4 style="color: #ff6b35; margin-bottom: 15px;">2 préambules avant de se lancer :</h4>
+                        <ol>
+                            <li><strong>Admettre qu'il y a un conflit</strong></li>
+                            <li><strong>Vouloir le traiter</strong></li>
+                        </ol>
+                    </div>
+
+                    <p style="margin: 20px 0;">Cet accompagnement dans le cadre de la médiation, n'est pas un jugement du « qui a tort ou a raison », n'est pas une défense de l'une ou l'autre des parties, n'est pas une accusation… <strong>Ni juge ni avocat ni procureur, mais facilitateur</strong> de l'expression de chacun, garant d'un processus visant à la sortie d'une situation qui ne convient à personne.</p>
+
+                    <h4 style="color: #ff6b35; margin: 30px 0 20px;">Le processus de médiation :</h4>
+                    <div class="process-timeline">
+                        <div class="process-step">
+                            <div class="process-number">1</div>
+                            <div>Entretien individuel avec les différentes parties pour mesurer la faisabilité et l'utilité de la médiation</div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-number">2</div>
+                            <div>Questionnaire identique aux différentes parties</div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-number">3</div>
+                            <div>Analyse des réponses par le médiateur</div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-number">4</div>
+                            <div>Entretien individuel de débrief du questionnaire des 2 parties</div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-number">5</div>
+                            <div>Entretien(s) collectif avec le cadre commun de la discussion (de 1 à 3 maximum)</div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-number">6</div>
+                            <div>Validation et acceptation des options de sortie du conflit des 2 parties</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-cta-wrapper">
+                    <a href="mailto:fhenry.tpdi@gmail.com?subject=Demande de médiation" class="service-cta">Engager une médiation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partenaires -->
+    <section class="partenaires-section">
+        <div class="container">
+            <h2 class="section-title">Mes partenaires</h2>
+            <p class="partenaires-text">En direct ou adossé à des structures avec plusieurs formateurs expérimentés pour de grandes équipes ou des déploiements rapides.</p>
+            <div class="partenaires-list">
+                <span>Upward</span>
+                <span>Fermundi</span>
+                <span>ESSCA</span>
+                <span>La Boétie Partenaire</span>
+                <span>Value+Games</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final-section">
+        <div class="container">
+            <h2>Prêt à cheminer ensemble ?</h2>
+            <p>Échangeons sur vos enjeux pour construire un accompagnement adapté.</p>
+            <a href="mailto:fhenry.tpdi@gmail.com?subject=Demande de contact" class="cta-primary">Entrons en contact</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h2 style="font-size: 28px; margin-bottom: 10px;">François Henry</h2>
+            <p class="footer-baseline">Coaching • Formation • Médiation</p>
+            
+            <div class="contact-box">
+                <h3>Me contacter</h3>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <span style="font-size: 20px;">📧</span>
+                        <a href="mailto:fhenry.tpdi@gmail.com">fhenry.tpdi@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span style="font-size: 20px;">🔗</span>
+                        <a href="https://www.linkedin.com/in/fran%C3%A7ois-henry-5ab87475/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            
+            <p style="margin-top: 30px; opacity: 0.6; font-size: 14px;">© 2025 FJH Conseil · Tous droits réservés</p>
+        </div>
+    </footer>
+</body>
+</html>
